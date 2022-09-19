@@ -16,6 +16,8 @@ import './App.scss';
 const App = () => {
   const [formInput, setFormInput] = useState({ store: '', name: '', amount: '', phone: '', payment: "" });
   const [open, setOpen] = useState(false);
+  const [open1, setOpen1] = useState(false);
+
   const awardText = [
     { id: 1, award: 'A', number: 'ONE', text: 'dehumidifier', certificate: CertificateA },
     { id: 2, award: 'B', number: 'ONE', text: 'range hood', certificate: CertificateA },
@@ -31,6 +33,10 @@ const App = () => {
   const handlePropagation = (e) => {
     e.stopPropagation();
     setOpen(false);
+  };
+  const handlePropagation1 = (e) => {
+    e.stopPropagation();
+    setOpen1(false);
   };
   return (<>
 
@@ -94,12 +100,12 @@ const App = () => {
             <p> payment</p>
 
 
-            <div className='inputFirst' onClick={() => { setOpen(true); }}>
+            <div className='inputFirst' onClick={() => { setOpen1(true); }}>
               <input className='inputInner' type="text" placeholder=' placeholder text'
                 value={formInput.payment} onChange={(e) => { setFormInput({ ...formInput, payment: e.target.value }); }}
               />
 
-              {open && <div className="inputOption" onClick={handlePropagation}>
+              {open1 && <div className="inputOption" onClick={handlePropagation1}>
                 {payments.filter(({ option }) => option.includes(formInput.payment)).map(({ id, option }) => {
                   return (
                     <div className='item' key={`stores${id}`} onClick={() => { setFormInput({ ...formInput, payment: option }); }}>{option}</div>
