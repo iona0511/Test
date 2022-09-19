@@ -1,0 +1,305 @@
+$blue: #204379;
+$orange: #b57556;
+$green: #b3b960;
+$white: #ffffff;
+$cream: #e2d9d3;
+
+.container {
+    width: 100%;
+    height: auto;
+    background-color: rgb(226, 217, 211);
+
+    .background {
+        height: 634px;
+        padding: 60px 24px 8px 24px;
+        background-image: url(./images//svg/background.svg);
+        color: $blue;
+
+        .areaFirst {
+            text-align: center;
+            color: $white;
+            font-weight: 650;
+            line-height: 0.5rem;
+            letter-spacing: 0.4rem;
+            .text1 {
+                font-size: 32px;
+            }
+            .text2 {
+                font-size: 28px;
+            }
+            .Form {
+                margin-bottom: 32px;
+            }
+        }
+        .paragraphArea {
+            width: 808px;
+            height: 322px;
+            border: 2px solid $orange;
+            border-radius: 20px;
+            margin: 0 auto;
+            background: #dae4f1;
+            padding: 24px 16px;
+            position: relative;
+            .Sup {
+                position: absolute;
+                right: 13.05px;
+                top: -39.34px;
+            }
+            .Sup1 {
+                position: absolute;
+                left: 32.58px;
+                top: 343.91px;
+            }
+            .paragraph {
+                font-size: 18px;
+                font-weight: 700;
+                color: $blue;
+                text-align: center;
+                line-height: 22.5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .paragraph::before {
+                content: url(./images//svg/cactus.svg);
+            }
+            .paragraph::after {
+                content: url(./images//svg/cactus.svg);
+            }
+        }
+    }
+    .waveArea {
+        width: 100%;
+
+        .wave {
+            background: url(./images/svg/wave.svg) repeat-x;
+            height: 110px;
+            // animation: wave 5s linear infinite;
+        }
+    }
+
+    .formDataArea {
+        .formData {
+            width: 808px;
+            padding: 40px 20px;
+            border-radius: 16px;
+            border: 2px solid $orange;
+            background: $white;
+            margin: 0 auto;
+            margin-top: 41px;
+            margin-bottom: 42px;
+            position: relative;
+
+            .form {
+                width: 120px;
+                height: 43px;
+                border-radius: 50px;
+                border: 2px solid $orange;
+                position: absolute;
+                top: -21.5px;
+                right: 356.5px;
+                font-size: 18px;
+                font-weight: 800;
+                background: $white;
+                line-height: 2.7rem;
+                color: $orange;
+                text-align: center;
+                letter-spacing: 0.5rem;
+                padding-left: 5px;
+                .Turtle {
+                    position: absolute;
+                    transform: translate(-6px, -11px);
+                }
+            }
+            .inputFirst {
+                position: relative;
+                cursor: pointer;
+                .inputInner {
+                    width: 768px;
+                    height: 37px;
+                    border-radius: 20px;
+                    padding: 8px 16px;
+                    border: 1px solid $blue;
+                    margin: 15px 0;
+                    display: flex;
+                }
+                .inputOption {
+                    position: absolute;
+                    width: 800px;
+                    height: auto;
+                    left: 0px;
+                    top: 54px;
+                    background-color: $white;
+                    z-index: 1;
+           
+
+                    .item {
+                        padding: 8px 0px;
+                        &:hover{
+                            background: $cream;
+                            
+                        }
+                    }
+               
+                }
+                .Color {
+                    position: absolute;
+                    right: 20.6px;
+                    top: 25.5px;
+                }
+            }
+            .input {
+                width: 768px;
+                height: 37px;
+                border-radius: 20px;
+                padding: 8px 16px;
+                border: 1px solid $blue;
+                margin: 15px 0;
+                display: flex;
+                align-items: center;
+                position: relative;
+                .Color {
+                    position: absolute;
+                    right: 20.6px;
+                    top: 25.5px;
+                }
+            }
+        }
+        .Submit {
+            text-align: center;
+        }
+    }
+    .areaThird {
+        width: 630px;
+        display: flex;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        margin-top: 122px;
+        .present {
+            width: 178px;
+            height: 112px;
+            border-radius: 20px;
+            background: $white;
+            margin: 20px 16px;
+            color: #a0bcc8;
+            text-align: center;
+            font-size: 18px;
+            position: relative;
+            box-shadow: 0 8px #edeef0;
+            .certificateA {
+                .certificateImg {
+                    position: absolute;
+                    left: 56px;
+                    top: -24px;
+                }
+                .certificateText {
+                    position: absolute;
+                    width: 12px;
+                    left: 82.98px;
+                    bottom: 73.32px;
+                    font-family: 'Noto Sans TC';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16.916px;
+                    text-align: center;
+                    color: #fff;
+                }
+            }
+            .one {
+                border-radius: 50px;
+                border: 1px solid #a0bcc8;
+                position: absolute;
+                width: 45px;
+                height: 23px;
+                left: 125px;
+                top: 18px;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 1.4rem;
+            }
+            .presentText {
+                font-weight: 700;
+                position: absolute;
+                left: 0%;
+                right: 0%;
+                top: 48.15%;
+                bottom: 11.11%;
+            }
+        }
+        > div {
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+                color: $green;
+                .one {
+                    border: 1px solid $green;
+                }
+            }
+        }
+    }
+    .areaFourth {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 0.8rem;
+        color: $blue;
+
+        .areaFourthText {
+            position: relative;
+            display: inline-block;
+            > p:nth-child(1) {
+                color: $orange;
+            }
+
+            .Vector4 {
+                position: absolute;
+                left: -30px;
+                top: 20px;
+            }
+            .Vector5 {
+                position: absolute;
+                left: 215.77px;
+                top: 20px;
+            }
+        }
+        .Lighthouse {
+            margin: 20px 0 40px 0;
+        }
+    }
+
+    .areaFifth {
+        background: url(./images/svg//background.svg);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+        border-radius: 50px 50px 0px 0px;
+        color: $white;
+        font-size: 20px;
+        line-height: 0.8rem;
+        letter-spacing: 0.2rem;
+        font-weight: 700;
+        .Market {
+            margin-top: 24px;
+        }
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(100%);
+    }
+    25% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    75% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
