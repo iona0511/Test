@@ -1,7 +1,7 @@
 import "../App.scss";
 
 const Awards = ({allAward}) => {
-    const { id, award, text, number, certificate
+    const { award, text, number, certificate
     } = allAward
     return (<>
 
