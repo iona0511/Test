@@ -14,7 +14,7 @@ import Sup from "./images/svg/sup.svg";
 import Sup1 from "./images/svg/sup1.svg";
 import './App.scss';
 const App = () => {
-  const [formInput, setFormInput] = useState({ store: '', name: '', amount: '', phone: '', payment: "" });
+  const [formInput, setFormInput] = useState({ store: '', name: '', amount: '', phone: '', payment: '' });
   const [open, setOpen] = useState(false);
   const [open1, setOpen1] = useState(false);
 
@@ -37,6 +37,9 @@ const App = () => {
   const handlePropagation1 = (e) => {
     e.stopPropagation();
     setOpen1(false);
+  };
+  const phoneSlice = () => {
+
   };
   return (<>
 
@@ -90,7 +93,7 @@ const App = () => {
           </div>
           <div>
             <p>phone</p>
-            <input className='input' placeholder='placeholder text' type="text" value={formInput.phone} onChange={(e) => { setFormInput({ ...formInput, phone: e.target.value }); }} required />
+            <input className='input' placeholder='placeholder text' type="tel"  value={formInput.phone} onChange={(e) => { setFormInput({ ...formInput, phone: e.target.value }); }} required />
           </div>
           <div>
             <p>Amount of consumption</p>
