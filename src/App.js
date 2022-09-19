@@ -27,6 +27,7 @@ const App = () => {
     { id: 8, award: 'H', number: 'TEN', text: 'rice cooker', certificate: CertificateD }
   ];
   const stores = [{ id: 1, name: 'store1' }, { id: 2, name: '543534store2' }, { id: 3, name: '4545878678store3' }];
+  const payments = [{ id: 1, option: "digital payment" }, { id: 2, option: "ATM" }];
   const handlePropagation = (e) => {
     e.stopPropagation();
     setOpen(false);
@@ -91,7 +92,21 @@ const App = () => {
           </div>
           <div>
             <p> payment</p>
-            <div className='input'>digital payment<img src={Color} alt="" className='Color' />
+
+
+            <div className='inputFirst' onClick={() => { setOpen(true); }}>
+              <input className='inputInner' type="text" placeholder=' placeholder text'
+                value={formInput.payment} onChange={(e) => { setFormInput({ ...formInput, payment: e.target.value }); }}
+              />
+
+              {open && <div className="inputOption" onClick={handlePropagation}>
+                {payments.filter(({ option }) => option.includes(formInput.payment)).map(({ id, option }) => {
+                  return (
+                    <div className='item' key={`stores${id}`} onClick={() => { setFormInput({ ...formInput, payment: option }); }}>{option}</div>
+                  );
+                })}
+              </div>}
+              <img src={Color} alt="" className='Color' />
             </div>
           </div>
         </div>
@@ -131,14 +146,14 @@ const App = () => {
     </div>
     <br />
 
-    {/* <img src='/png/14001_.png' alt='' className='' />
+    <img src='/png/14001_.png' alt='' className='' />
     <img src='/png/1400_.png' alt='' className='' />
 
     <br />
     <img src='/png/文字輸入框說明.png' alt='' className='' />
     <br />
 
-    <img src='/png/輸入資料說明.png' alt='' className='' /> */}
+    <img src='/png/輸入資料說明.png' alt='' className='' />
 
 
   </>);
