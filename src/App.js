@@ -80,6 +80,7 @@ const App = () => {
       </div>
       <div className='waveArea'>
         <img src={Wave} alt="" className='wave' />
+        <div></div>
       </div>
       <div className='formDataArea'>
         <div className='formData'>
