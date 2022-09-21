@@ -10,9 +10,15 @@ import Turtle from "./images/svg/turtle.svg";
 import Color from "./images/svg/color.svg";
 import Vector4 from "./images/svg/Vector4.svg";
 import Vector5 from "./images/svg/Vector5.svg";
+import Wave from "./images/svg/wave.svg";
+
 import Sup from "./images/svg/sup.svg";
 import Sup1 from "./images/svg/sup1.svg";
+import Paddle from "./images/svg/paddle.svg";
+import Paddle1 from "./images/svg/paddle1.svg";
 import './App.scss';
+import 'animate.css';
+
 const App = () => {
   const [formInput, setFormInput] = useState({ store: '', name: '', amount: '', phone: '', payment: '' });
   const [open, setOpen] = useState(false);
@@ -28,7 +34,7 @@ const App = () => {
     { id: 7, award: 'G', number: 'FIVE', text: 'vacuum cleaner', certificate: CertificateD },
     { id: 8, award: 'H', number: 'TEN', text: 'rice cooker', certificate: CertificateD }
   ];
-  const stores = [{ id: 1, name: 'store1' }, { id: 2, name: '543534store2' }, { id: 3, name: '4545878678store3' }];
+  const stores = [{ id: 1, name: 'store1' }, { id: 2, name: '測試store2' }, { id: 3, name: '測驗store3' }];
   const payments = [{ id: 1, option: "digital payment" }, { id: 2, option: "ATM" }];
   const handlePropagation = (e) => {
     e.stopPropagation();
@@ -38,9 +44,16 @@ const App = () => {
     e.stopPropagation();
     setOpen1(false);
   };
-  const phoneSlice = () => {
 
+  const handlePhoneInput = (e) => {
+    const phoneRegexp = /^[0|09][0-9]{0,8}$/;
+    console.log('e.target.value ', e.target.value);
+    if (!phoneRegexp.test(e.target.value)) {
+      return false;
+    }
+    setFormInput({ ...formInput, phone: e.target.value });
   };
+
   return (<>
 
     <div className='container'>
@@ -53,7 +66,9 @@ const App = () => {
         </div>
         <div className='paragraphArea'>
           <img src={Sup} alt="" className='Sup' />
+          <img src={Paddle} alt="" className='Paddle' />
           <img src={Sup1} alt="" className='Sup1' />
+          <img src={Paddle1} alt="" className='Paddle1' />
           <p className='paragraph'> paragraph</p>
           <p>1. Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
           <p className='paragraph'>paragraph</p>
@@ -64,12 +79,12 @@ const App = () => {
         </div>
       </div>
       <div className='waveArea'>
-        <div className='wave'></div>
+        <img src={Wave} alt="" className='wave' />
       </div>
       <div className='formDataArea'>
         <div className='formData'>
           <div className='form'>FORM
-            <img src={Turtle} alt="" className='Turtle' /></div>
+            <img src={Turtle} alt="" className='Turtle ' /></div>
           <div>
             <p>store</p>
             <div className='inputFirst' onClick={() => { setOpen(true); }}>
@@ -93,11 +108,11 @@ const App = () => {
           </div>
           <div>
             <p>phone</p>
-            <input className='input' placeholder='placeholder text' type="tel"  value={formInput.phone} onChange={(e) => { setFormInput({ ...formInput, phone: e.target.value }); }} required />
+            <input className='input' placeholder='placeholder text' type="text" inputMode='tel' maxLength={10} value={formInput.phone} onChange={handlePhoneInput} required />
           </div>
           <div>
             <p>Amount of consumption</p>
-            <input className='input' placeholder='placeholder text' type="text" value={formInput.amount} onChange={(e) => { setFormInput({ ...formInput, amount: e.target.value }); }} required />
+            <input className='input' placeholder='placeholder text' type="text" inputMode='number' value={formInput.amount} onChange={(e) => { setFormInput({ ...formInput, amount: e.target.value }); }} required />
           </div>
           <div>
             <p> payment</p>

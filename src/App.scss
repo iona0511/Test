@@ -10,7 +10,7 @@ $cream: #e2d9d3;
     background-color: rgb(226, 217, 211);
 
     .background {
-        height: 634px;
+        height: 664px;
         padding: 60px 24px 8px 24px;
         background-image: url(./images//svg/background.svg);
         color: $blue;
@@ -45,10 +45,23 @@ $cream: #e2d9d3;
                 right: 13.05px;
                 top: -39.34px;
             }
+            .Paddle {
+                position: absolute;
+                right: 13.05px;
+                top: -34.34px;
+                animation: Rotate 5s linear infinite;
+            }
             .Sup1 {
                 position: absolute;
                 left: 32.58px;
                 top: 343.91px;
+            }
+            .Paddle1 {
+                position: absolute;
+                left: 32.58px;
+                top: 343.91px;
+                animation: Rotate1 5s linear infinite;
+
             }
             .paragraph {
                 font-size: 18px;
@@ -70,12 +83,12 @@ $cream: #e2d9d3;
     }
     .waveArea {
         width: 100%;
-
+        height: 110px;  
         .wave {
-            background: url(./images/svg/wave.svg) repeat-x;
-            height: 110px;
-            // animation: wave 5s linear infinite;
+            width: 100%;
+
         }
+
     }
 
     .formDataArea {
@@ -109,6 +122,7 @@ $cream: #e2d9d3;
                 .Turtle {
                     position: absolute;
                     transform: translate(-6px, -11px);
+                    animation: 3s Turtle linear infinite;
                 }
             }
             .inputFirst {
@@ -131,16 +145,13 @@ $cream: #e2d9d3;
                     top: 54px;
                     background-color: $white;
                     z-index: 1;
-           
 
                     .item {
                         padding: 8px 0px;
-                        &:hover{
+                        &:hover {
                             background: $cream;
-                            
                         }
                     }
-               
                 }
                 .Color {
                     position: absolute;
@@ -288,18 +299,46 @@ $cream: #e2d9d3;
 
 @keyframes wave {
     0% {
-        transform: translateX(100%);
-    }
-    25% {
-        transform: translateX(0%);
-    }
-    50% {
-        transform: translateX(-100%);
-    }
-    75% {
-        transform: translateX(100%);
+        transform: translateX(0vw);
     }
     100% {
         transform: translateX(-100%);
+    }
+}
+
+@keyframes Turtle {
+    50% {
+        transform: translateX(-10%);
+    }
+}
+
+
+@keyframes Rotate{
+    0%{
+        transform: rotate(0deg) ;
+
+    }
+    50%{
+        transform: rotate(45deg) ;
+
+    }
+    100%{
+        transform: rotate(0deg);
+
+    }
+}
+
+@keyframes Rotate1{
+    0%{
+        transform: rotate(315deg) ;
+
+    }
+    50%{
+        transform: rotate(360deg) ;
+
+    }
+    100%{
+        transform: rotate(315deg);
+
     }
 }
